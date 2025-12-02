@@ -1,0 +1,92 @@
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+@import 'simplebar-react/dist/simplebar.min.css';
+@import 'react-toastify/dist/ReactToastify.css';
+
+.css-13ddxbb > * + * {
+  margin: 0 !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.Toastify__toast-body {
+  white-space: pre-line;
+}
+
+.grecaptcha-badge {
+  z-index: 1;
+}
+
+/* CSS for printing */
+@media print {
+  @page {
+    size: auto;
+    margin: 0;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .print-table-container,
+  .print-table-container *,
+  .print-total-value-container,
+  .print-total-value-container *,
+  .print-form-container,
+  .print-form-container *,
+  .print-logo-wrapper,
+  .print-logo-wrapper *,
+  .print-logo,
+  .print-logo * {
+    visibility: visible;
+  }
+
+  .print-timer-hidden-container,
+  .print-filter-hidden-container,
+  .print-hidden-column,
+  .print-card-hidden-title,
+  .print-hidden-table-container {
+    display: none !important;
+  }
+
+  .print-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .print-logo {
+    display: flex !important;
+    justify-content: center;
+    width: auto;
+    height: 58px;
+  }
+
+  .print-total-value-container {
+    scrollbar-width: none;
+    max-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .print-table-container,
+  .print-form-container {
+    scrollbar-width: none;
+    max-height: 100vh;
+    height: 100%;
+    display: flex !important;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,69 @@
+'use client';
+import React from 'react';
+
+// NEXT
+import Link from 'next/link';
+import Image from 'next/image';
+
+// MATERIAL - UI
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+
+// PROJECT IMPORTS
+import { ArrowLeft } from 'iconsax-react';
+import { ErrorPage500Container } from './ErrorPage.styled';
+import { APP_DEFAULT_PATH } from 'config';
+
+// ASSETS
+const error500 = '/assets/images/maintenance/img-error-500.svg';
+
+// ==============================|| ERROR 500 ||============================== //
+
+function Error500Page() {
+  const theme = useTheme();
+  const matchDownSM = useMediaQuery(theme.breakpoints.down('sm'));
+
+  return (
+    <>
+      <ErrorPage500Container container spacing={3}>
+        <Grid item xs={12}>
+          <Image
+            src={error500}
+            alt="mantis"
+            width={matchDownSM ? 350 : 396}
+            height={matchDownSM ? 325 : 370}
+            style={{
+              maxWidth: '100%',
+              height: 'auto',
+            }}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Stack justifyContent="center" alignItems="center">
+            <Typography align="center" variant={matchDownSM ? 'h2' : 'h1'}>
+              Internal Server Error
+            </Typography>
+            <Typography color="textSecondary" variant="body2" align="center" sx={{ width: { xs: '73%', sm: '70%' }, mt: 1 }}>
+              Server error 500. we fixing the problem. please try again at a later stage.
+            </Typography>
+            <Button
+              component={Link}
+              href={APP_DEFAULT_PATH}
+              variant="contained"
+              sx={{ textTransform: 'none', mt: 4 }}
+              startIcon={<ArrowLeft />}
+            >
+              Back To Home
+            </Button>
+          </Stack>
+        </Grid>
+      </ErrorPage500Container>
+    </>
+  );
+}
+
+export default Error500Page;

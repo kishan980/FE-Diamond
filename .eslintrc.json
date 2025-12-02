@@ -1,0 +1,73 @@
+{
+  "plugins": ["prettier", "@typescript-eslint"],
+  "extends": ["next/core-web-vitals", "eslint:recommended", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "sourceType": "module",
+    "createDefaultProgram": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src/"]
+      },
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "no-param-reassign": "error",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "react/no-array-index-key": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/order": "warn",
+    "no-console": "warn",
+    "no-shadow": "off",
+    "prefer-const": "error",
+    "@typescript-eslint/naming-convention": "off",
+    "prefer-destructuring": "error",
+    "import/no-extraneous-dependencies": "off",
+    "react/display-name": "off",
+    "import/no-unresolved": ["off", { "caseSensitive": false }],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"]
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ],
+    "prettier/prettier": [
+      "warn",
+      {
+        "bracketSpacing": true,
+        "endOfLine": "auto",
+        "printWidth": 140,
+        "trailingComma": "es5",
+        "semi": true,
+        "singleQuote": true,
+        "tabWidth": 2,
+        "useTabs": false
+      }
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": true,
+        "classes": true,
+        "variables": true,
+        "allowNamedExports": false
+      }
+    ]
+  }
+}
